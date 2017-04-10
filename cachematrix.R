@@ -1,3 +1,7 @@
+
+## "makeCacheMatrix" creates a matrix object with 4 associated functions:
+## "set" which sets the matrix, "get" which gets the matrix, "setinv" which sets
+## inverse of the matrix and "getinv" which gets the inverse of the matrix
 makeCacheMatrix <- function(x = matrix()) {
   # @x: a square invertible matrix
   # return: a list containing functions to
@@ -19,6 +23,8 @@ makeCacheMatrix <- function(x = matrix()) {
   list(set=set, get=get, setinv=setinv, getinv=getinv) # return list of set/get functions
 }
 
+## "cacheSolve" function will invert the matrix created by "makeChacheMatrix" if
+## it doesn't exist or use existing inverse if it was stored before    
 cacheSolve <- function(x, ...) {
   # @x: output of makeCacheMatrix()
   # return: inverse of the original matrix input to makeCacheMatrix()
